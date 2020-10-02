@@ -1,20 +1,50 @@
 import React from 'react'
-import Head from 'next/head'
+import Link from 'next/link'
 
-import RocketseatLogo from '../assets/rocketseat.svg'
+import { 
+  Container,
+  HomeContent,
+  LogoContainer,
+  LogoImg,
+  LogoText,
+  HeroImage,
+  ButtonsContainer,
+  Study,
+  StudyIcon,
+  GiveClasses,
+  GiveClassesIcon,
+  TextButtons
 
-import { Container } from '../styles/pages/Home'
+} from '../styles/pages/Home'
+
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <Head>
-        <title>Homepage</title>
-      </Head>
+      <HomeContent>
+        <LogoContainer>
+            <LogoImg src="/logo.svg" alt="logo"/>
+            <LogoText>Sua plataforma de estudo online.</LogoText>
+        </LogoContainer>
 
-      <RocketseatLogo />
-      <h1>ReactJS Structure</h1>
-      <p>A ReactJS + Next.js structure made by Rocketseat.</p>
+        <HeroImage src="/landing.svg" alt="landing"/>
+  
+        <ButtonsContainer className="buttons-container">
+            <Link href="/task-list">
+              <Study>
+                <StudyIcon src="/icons/study.svg" alt="estudar"/> 
+                <TextButtons>Ver as tarefas</TextButtons>
+              </Study>
+            </Link>
+
+            <Link href="/task-form">
+              <GiveClasses>
+                  <GiveClassesIcon src="/icons/classes.png" alt="aulas"/>
+                  <TextButtons>Criar tarefas</TextButtons>
+              </GiveClasses>
+            </Link>    
+        </ButtonsContainer>
+            </HomeContent>
     </Container>
   )
 }
