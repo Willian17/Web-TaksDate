@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import Header from '../../components/Header';
-import TaskItem, {TaskItemProps} from '../../components/TaskItem';
+import Header from '../components/Header';
+import TaskItem, {TaskItemProps} from '../components/TaskItem';
 
-import api from '../../services/api';
+import api from '../services/api';
 
 import { 
     TaskContainer,
     TasksList
-} from './styles'
+} from '../styles/pages/taskList'
 
 
 const ListTask: React.FC = () => {

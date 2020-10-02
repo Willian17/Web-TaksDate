@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import Header from '../../components/Header';
-import Input from '../../components/Input';
-import api from '../../services/api'
+import Header from '../components/Header';
+import Input from '../components/Input';
+import api from '../services/api'
 
-import { TaskFormPage, Main, FieldSet, Legend, Footer, FieldSetData } from './styles';
+import { TaskFormPage, Main, FieldSet, Legend, Footer, FieldSetData } from '../styles/pages/taskForm';
 
 const CreateTask: React.FC = () => {
   const [subject, setSubject] = useState('');
