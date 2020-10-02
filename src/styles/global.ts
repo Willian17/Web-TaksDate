@@ -2,7 +2,7 @@ import styled,{ createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   :root{
-    font-size: 60%;
+    font-size: 50%;
   }
 
   * {
