@@ -19,6 +19,7 @@ import {
 
 
 const Home: React.FC = () => {
+  console.log(process.env.API_URL)
   return (
     <Container>
       <HomeContent>
