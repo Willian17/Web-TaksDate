@@ -62,18 +62,14 @@ export const GiveClasses = styled.a`
   width: 30rem;
   height: 10.4rem;
   border-radius: 0.8rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: ${props => props.theme.colors.buttonText};
   background: ${props => props.theme.colors.secondary};
   transition: background-color 0.2s;
-
   text-decoration: none;
   cursor: pointer;
-
   :hover{
     background: ${props => props.theme.colors.secondaryDark}
   }
@@ -88,9 +84,15 @@ export const TextButtons = styled.span`
 `
 
 export const HomeContent = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    align-items: center; 
+
     @media (min-width: 1100px){
       max-width: 1100px;
-
       display: grid;
       grid-template-rows: 350px 1fr;
       grid-template-columns: 2fr 1fr;
@@ -98,34 +100,30 @@ export const HomeContent = styled.div`
       "logo hero"
       "buttons buttons";
     };
-
     ${LogoContainer}{
       grid-area: logo;
       align-self: center;
       margin: 0;
       text-align: left;
     }
-
     ${LogoText}{
       text-align: initial;
       font-size: 3.6rem;
     }
-
     ${HeroImage}{
       grid-area: hero;
       justify-self: end;
     }
-
     ${ButtonsContainer}{
       grid-area: buttons;
       justify-content: flex-start;
-
       > a {
         font-size: 2.4rem;
       }
-
       > a img {
         margin-right: 2.4rem;
       }
     }
 `
+
+

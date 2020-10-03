@@ -45,6 +45,7 @@ export const HeaderContent = styled.div`
     margin: 0 auto;
     position: relative;
     margin: 3.2rem auto;
+    padding-left: 1.5rem;
 
     @media (min-width: 700px) {
         flex: 1;

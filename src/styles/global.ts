@@ -1,8 +1,8 @@
 import styled,{ createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
-  :root{
-    font-size: 50%;
+ html{
+    font-size: 30%;
   }
 
   * {
@@ -34,8 +34,8 @@ export default createGlobalStyle`
   }
 
   @media (min-width: 700px){
-      :root {
-          font-size: 80.5%;
+    html{
+          font-size: 60.5%;
       }
   }
 `
