@@ -14,6 +14,7 @@ const ListTask: React.FC = () => {
     const [tasks, setTasks] = useState([])
 
     useEffect(()=>{
+        console.log(process.env.API_URL)
         api.get('tasks').then((response)=>{
             setTasks(response.data)
         }).catch(error=> {
