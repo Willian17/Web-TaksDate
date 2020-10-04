@@ -14,10 +14,10 @@ const ListTask: React.FC = () => {
     const [tasks, setTasks] = useState([])
 
     useEffect(()=>{
-        api.get('tasks').then((response)=>{
+        api.get('/tasks').then((response)=>{
             setTasks(response.data)
         }).catch(error=> {
-            console.error(error)
+            console.log(error)
         })
     }, [])
     return(
