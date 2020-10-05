@@ -10,9 +10,13 @@ export interface TaskItemProps {
     deliverydate: string
 }
 const TaskItem: React.FC<TaskItemProps> = ( {title, subject, deliverydate} ) => {
+    console.log('deliverydate da API'  + deliverydate)
     const deliveryDate = new Date(deliverydate)
+    console.log('deliveryDate do service'  + deliveryDate)
+
 
     const deliverydateFormated = format(deliveryDate, "yyyy/MM/dd HH:mm")
+    console.log('deliveryDate do service formated'  + deliverydateFormated)
 
     return (
        <TaskItemContainer>
