@@ -43,9 +43,9 @@ export const FieldSetData = styled.fieldset`
         margin-top: 0;
     }
 
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 1.6rem;
+   
+    display: flex;
+    justify-content: space-between;
     
     @media(min-width: 700px) {
         padding: 0 6.4rem;

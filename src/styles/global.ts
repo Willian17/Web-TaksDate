@@ -2,9 +2,8 @@ import styled,{ createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
  html{
-    font-size: 30%;
+    font-size: 55%;
   }
-
   * {
     margin: 0;
     padding: 0;

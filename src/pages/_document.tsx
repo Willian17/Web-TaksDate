@@ -9,8 +9,6 @@ import Document, {
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
-import favicon from '../assets/favicon.ico'
-
 export default class MyDocument extends Document {
   static async getInitialProps(
     ctx: DocumentContext
@@ -51,6 +49,7 @@ export default class MyDocument extends Document {
           />
 
           <link rel="icon" href="/favicon.ico" />
+          <title>TasksDate</title>
         </Head>
         <body>
           <Main/>

@@ -11,6 +11,7 @@ import {
     TopBar
 
 } from './styles'
+import { useRouter } from 'next/router'
 
 
 interface PageHeaderProps {
@@ -18,15 +19,14 @@ interface PageHeaderProps {
     description?: string
 }
 
- const  PageHeader: React.FC<PageHeaderProps> = (props)=> {
+ const  PageHeader: React.FC<PageHeaderProps> = (props)=> { 
+     const router = useRouter()
     return(
         <Header>
                 <TopBar className="top-bar-container">
-                    <Link href="/">
-                        <BackLink>
+                        <BackLink onClick={()=> router.back()}>
                             <img src="/icons/back.svg" alt="Voltar"/>
                         </BackLink>
-                    </Link>
                     <Logo src="/logo.svg" alt="Logo"/>
                 </TopBar>
 

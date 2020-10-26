@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
 import Header from '../components/Header';
 import Input from '../components/Input';
@@ -27,10 +28,11 @@ const CreateTask: React.FC = () => {
       setTitle('')
       setDate(Date)
       setTime('')
+      toast.success('Tarefa criada com sucesso')
     }).catch(error => {
       console.error(error)
     })
-  }
+}
     return (
         <TaskFormPage>
             <Header 
@@ -38,6 +40,7 @@ const CreateTask: React.FC = () => {
              description="O primeiro passo, é preencher esse formulário de criação de tarefa"
             />
             <Main>
+              <ToastContainer />
               <form onSubmit={e => handleOnSubmit(e)}>
                 <FieldSet>
                   <Legend>Sobre a tarefa</Legend>
@@ -69,6 +72,15 @@ const CreateTask: React.FC = () => {
                   <Legend>Data de entrega</Legend>
                   
                   <Input
+                    name="horario"
+                    label="Horário"
+                    type="time"
+                    value={time}
+                    onChange={e => setTime(e.target.value)}
+                    required
+                  />
+                  
+                  <Input
                     name="data"
                     label="Data"
                     type="date"
@@ -77,14 +89,6 @@ const CreateTask: React.FC = () => {
                     required
                   />
 
-                  <Input
-                    name="horario"
-                    label="Horário"
-                    type="time"
-                    value={time}
-                    onChange={e => setTime(e.target.value)}
-                    required
-                  />
 
                 </FieldSetData>
 

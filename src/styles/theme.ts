@@ -11,6 +11,7 @@ const theme = {
     titleInPrimary: '#FFFFFF',
     textInPrimary: '#D4C2FF',
     textTitle: '#32264D',
+    textLabel: '#9C98A6',
     textComplement: '#9C98A6',
     textBase: '#6A6180',
     lineInWhite: '#E6E6F0',
