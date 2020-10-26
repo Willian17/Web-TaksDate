@@ -24,7 +24,8 @@ const Landing: React.FC = () => {
 
             <img 
               src={
-                user?.avatar
+                user?.avatar || 
+                'https://iupac.org/wp-content/uploads/2018/05/default-avatar-300x300.png'
               } 
                 alt="Logo-Usuário" 
             />

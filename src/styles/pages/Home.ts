@@ -67,6 +67,7 @@ header .user-container img {
   background: none;
   border: none;
   margin-top: -10px;
+  cursor: pointer;
 }
 #page-landing-content {
   max-width: 1366px;
@@ -182,7 +183,7 @@ footer .buttons-container .give-classes {
   color:  ${props => props.theme.colors.titleInPrimary};
 }
 
-@media (min-width: 1150px) { //////////////////////////////
+@media (min-width: 1150px) { ////////////////////////////// desktop
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -274,7 +275,7 @@ footer .buttons-container .give-classes {
 
   #page-landing-content .hero-image {
     height: auto;
-    width: 100%;
+    width: 50%;
     margin-left: 2rem;
   }
 
@@ -303,7 +304,7 @@ footer .buttons-container .give-classes {
   }
 
   footer .buttons-container a {
-    width: 30rem;
+    width: 27rem;
     height: 12rem;
 
     flex-direction: row;

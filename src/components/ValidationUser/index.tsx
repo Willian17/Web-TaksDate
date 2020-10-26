@@ -29,6 +29,8 @@ const ValidationUser: React.FC = ({children}) => {
             if(Router.pathname != '/signin' && Router.pathname != '/signup'){
                 setIsVerify(true) 
                 Router.push('/signin')
+            } else {
+                setIsVerify(true) 
             }
         }
     }, [])

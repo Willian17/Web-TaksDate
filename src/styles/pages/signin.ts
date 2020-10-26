@@ -81,7 +81,7 @@ export const PageLogin = styled.div`
     flex-direction: column;
     }
 
-    button {
+    .button {
     width: 41rem;
     height: 5.6rem;
     background: ${props => props.theme.colors.secondary};

@@ -8,6 +8,7 @@ import Aside from '../components/Aside';
 import {PageLogin} from '../styles/pages/signin'
 import { useDispatch } from 'react-redux';
 import actions from '../redux/actions'
+import { toast, ToastContainer } from 'react-toastify';
 
 const Signin: NextPage = ()=> {
     const [email, setEmail] = useState('')
@@ -16,8 +17,12 @@ const Signin: NextPage = ()=> {
     const dispatch = useDispatch()
 
 
-    function handleAuthenticate(){
-        dispatch(actions.authenticate({email, password}, 'login'))
+    async function handleAuthenticate(){
+        try {
+            dispatch(actions.authenticate({email, password}, 'login'))
+        } catch (error) {
+           console.log(error)
+        }
     }
 
     return(
@@ -27,6 +32,7 @@ const Signin: NextPage = ()=> {
             <div className="title-container">
                 <h2>Fazer login</h2>
             </div>
+            <ToastContainer />
     
             <div className="inputs">
                 <InputForm
@@ -49,7 +55,7 @@ const Signin: NextPage = ()=> {
             <div className="buttons-container">
     
                 <div className="second-line">
-                <button onClick={handleAuthenticate}
+                <button onClick={handleAuthenticate} className="button"
                     type="button"
                 >
                     Entrar
