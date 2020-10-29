@@ -18,12 +18,15 @@ const ListTask: NextPage = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(()=>{
-        api.get('/tasks').then((response)=>{
-            setTasks(response.data)
-            setIsLoading(false)
-        }).catch(error=> {
-            console.log(error)
-        })
+
+        setTimeout(() => {
+            api.get('/tasks').then((response)=>{
+                setTasks(response.data)
+                setIsLoading(false)
+            }).catch(error=> {
+                console.log(error)
+            })
+        }, 1000)
     }, [])
     return(
         <TaskContainer>
