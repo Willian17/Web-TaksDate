@@ -3,7 +3,7 @@
 function formatDate(deliveryDate: string){
   const [dataString, timeComplete] = deliveryDate.split(' ')
   const [hour, minutes , , turn] = timeComplete.split(':')
-  console.log(timeComplete.split(':'))
+  console.log(timeComplete.split(' '))
   const ambient = process.env.NODE_ENV
 
   var dataStringFormated = dataString
