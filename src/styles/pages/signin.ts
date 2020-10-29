@@ -50,7 +50,7 @@ export const PageLogin = styled.div`
 
 
     .buttons-container {
-    width: 33rem;
+    width: 100%;
     height: 3rem;
 
     margin-top: 2rem;
@@ -82,7 +82,7 @@ export const PageLogin = styled.div`
     }
 
     .button {
-    width: 41rem;
+    width: 34rem;
     height: 5.6rem;
     background: ${props => props.theme.colors.secondary};
     color: ${props => props.theme.colors.buttonText} !important;
@@ -99,13 +99,16 @@ export const PageLogin = styled.div`
     margin-top: 3.2rem;
     outline: 0;
     }
-    button:hover {
+    .button:hover {
     background: ${props => props.theme.colors.secondaryDark};
     }
 
     @media(min-width: 1120px){
         ${PageAside}{
             display: block;
+        }
+        .button{
+            width: 42rem;
         }
     }
 `

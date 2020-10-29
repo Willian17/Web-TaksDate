@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextPage } from 'next';
 import {useRouter} from 'next/router'
 
 import {
@@ -9,7 +10,7 @@ import {
   Button
 } from '../styles/pages/signupSucess'
 
-const SignUpSucess: React.FC = () => {
+const SignUpSucess: NextPage = () => {
   const router = useRouter()
   return (
     <SuccessPage>

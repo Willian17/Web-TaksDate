@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { NextPage } from 'next';
 import { useRouter } from 'next/router'
 import React from 'react';
 
@@ -23,7 +23,7 @@ import InputForm from '../components/inputForm';
 import Select from '../components/Select';
 import api from '../services/api';
 
-const Signup: React.FC = ()=> {
+const Signup: NextPage = ()=> {
     const router = useRouter()
     const initialValues = {
         name: '',

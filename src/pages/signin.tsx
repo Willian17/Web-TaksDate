@@ -47,7 +47,6 @@ const Signin: NextPage = ()=> {
                 onChange={e => setPassword(e.target.value)}
                 required
                 />
-            </div>
             <div className="buttons-container">
     
                 <div className="second-line">
@@ -57,6 +56,7 @@ const Signin: NextPage = ()=> {
                     Entrar
                 </button>
                 </div>
+            </div>
             </div>
   
             <div className="footer">

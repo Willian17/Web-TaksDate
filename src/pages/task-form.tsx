@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
@@ -7,7 +8,7 @@ import api from '../services/api'
 
 import { TaskFormPage, Main, FieldSet, Legend, Footer, FieldSetData } from '../styles/pages/taskForm';
 
-const CreateTask: React.FC = () => {
+const CreateTask: NextPage = () => {
   const [subject, setSubject] = useState('');
   const [title, setTitle] = useState('');
   const [date, setDate] = useState(Date);

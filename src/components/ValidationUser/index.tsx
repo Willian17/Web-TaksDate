@@ -1,11 +1,12 @@
 import Router from 'next/router'
+import {NextComponentType} from  'next'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import actions from '../../redux/actions'
 
 import { getCookie} from "../../utils/cookie"
 
-const ValidationUser: React.FC = ({children}) => {
+const ValidationUser: NextComponentType = ({children}) => {
     const [verify , setIsVerify] = useState(false)
     const state: any = useSelector(state => state)
 
@@ -40,6 +41,10 @@ const ValidationUser: React.FC = ({children}) => {
             {verify && children}
         </>
     )
+}
+
+ValidationUser.getInitialProps = async (ctx) =>{
+    
 }
 
 export default ValidationUser

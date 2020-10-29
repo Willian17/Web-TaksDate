@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import React, {useEffect, useState} from 'react';
 import Header from '../components/Header';
 import LoadingFeedShare from '../components/LoadingTasks';
@@ -12,7 +13,7 @@ import {
 import formatDate from '../utils/formatDate';
 
 
-const ListTask: React.FC = () => {
+const ListTask: NextPage = () => {
     const [tasks, setTasks] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
