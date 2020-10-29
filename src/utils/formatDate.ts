@@ -1,13 +1,24 @@
-function formatDate(deliveryDate: string){
-  console.log(deliveryDate)
-  const [dataString, timeComplete] = deliveryDate.split(' ')
-  const [hour, minutes] = timeComplete.split(':')
 
+
+function formatDate(deliveryDate: string){
+  const [dataString, timeComplete] = deliveryDate.split(' ')
+  const [hour, minutes , , turn] = timeComplete.split(':')
+  const ambient = process.env.NODE_ENV
+
+  var dataStringFormated = dataString
+  var timeFormated = `${hour}:${minutes}`
+  if(ambient == 'production'){
+     const [month, day, year] =  dataString.split('/')
+     dataStringFormated = `${day}/${month}/${year}`
+
+     timeFormated = `${hour}:${minutes} ${turn}`
+  }
+  
 
 
   const dateFormated = {
-    date: dataString,
-    time: `${hour}:${minutes}`
+    date: dataStringFormated,
+    time: timeFormated
   }
   return dateFormated
 }
