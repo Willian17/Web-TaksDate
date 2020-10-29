@@ -18,11 +18,7 @@ const Signin: NextPage = ()=> {
 
 
     async function handleAuthenticate(){
-        try {
             dispatch(actions.authenticate({email, password}, 'login'))
-        } catch (error) {
-           console.log(error)
-        }
     }
 
     return(

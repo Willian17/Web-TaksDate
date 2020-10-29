@@ -1,9 +1,12 @@
 function formatDate(deliveryDate: string){
-  const [data, timeComplete] = deliveryDate.split(' ')
+  console.log(deliveryDate)
+  const [dataString, timeComplete] = deliveryDate.split(' ')
   const [hour, minutes] = timeComplete.split(':')
 
+
+
   const dateFormated = {
-    date: data,
+    date: dataString,
     time: `${hour}:${minutes}`
   }
   return dateFormated
