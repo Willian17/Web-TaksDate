@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import actions from '../../redux/actions'
 
-import { getCookie} from "../../utils/cookie"
+import { getCookie, getToken} from "../../utils/cookie"
 
 const ValidationUser: NextComponentType = ({children}) => {
     const [verify , setIsVerify] = useState(false)
@@ -13,21 +13,22 @@ const ValidationUser: NextComponentType = ({children}) => {
 
     const dispatch = useDispatch()
 
-    useEffect(()=> {
-        const user = getCookie('user')
-        const token = getCookie('token')
+
+    useEffect( ()=> {
+        const user =  getCookie('user')
+        const token = getToken()
 
 
-        if(user && token){ // estão autenticados no cookie
-            if(!state.authentication.user || !state.authentication.token){
+        if(token){ // estão autenticados pelo token
+            if(!state.authentication.user || !state.authentication.token){ // não tiver no estado global
                 dispatch(actions.reauthenticate(token, user))
             }
-            if(Router.pathname == '/signin' || Router.pathname == '/signup'  ){
+            if(Router.pathname == '/signin' || Router.pathname == '/signup'  ){ // autenticado querendo fazer login
                 Router.push('/')
             }
             setIsVerify(true)
-        } else {
-            if(Router.pathname != '/signin' && Router.pathname != '/signup'){
+            } else { // não está autenticado
+            if(Router.pathname != '/signin' && Router.pathname != '/signup'){ // página não permitida
                 setIsVerify(true) 
                 Router.push('/signin')
             } else {
@@ -43,8 +44,5 @@ const ValidationUser: NextComponentType = ({children}) => {
     )
 }
 
-ValidationUser.getInitialProps = async (ctx) =>{
-    
-}
 
 export default ValidationUser

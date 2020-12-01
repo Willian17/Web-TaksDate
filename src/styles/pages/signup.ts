@@ -22,7 +22,8 @@ export const BackLink = styled.a`
 `
 
 export const Main = styled.div`
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     margin-top: 10rem;
     text-align: center;
 
@@ -30,18 +31,25 @@ export const Main = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media(min-width: 1000px){
+        margin-top: 0;
+    }
 `
 
 export const Title = styled.h1`
-    font: 700 5.6rem Poppins;
+    font: 700 3.5rem Poppins;
     color: ${props => props.theme.colors.textTitle};
     margin-bottom: 1.5rem;
 `
 
 export const Subtitle = styled.h3`
-    font: 400 3.5rem Poppins;
+    font: 400 2.5rem Poppins;
     color: ${props => props.theme.colors.textBase};
-    margin-bottom: 10rem;
+    margin-bottom: 1.5rem;
+    @media(max-width: 700px){
+        display: none;
+    }
 `
 
 

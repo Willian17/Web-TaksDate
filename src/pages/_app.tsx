@@ -11,6 +11,8 @@ import GlobalStyle from '../styles/global'
 import 'react-toastify/dist/ReactToastify.css';
 import theme from '../styles/theme'
 import ValidationUser from '../components/ValidationUser'
+import { getToken } from '../utils/cookie'
+import isPublicRoute from '../utils/isPublicRoute'
 
 class MyApp extends App {
   render() {

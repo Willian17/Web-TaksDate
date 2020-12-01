@@ -1,7 +1,7 @@
 import Router from 'next/router'
 import {AUTHENTICATE, DEAUTHENTICATE, USER} from '../types'
 import api from "../../services/api"
-import { removeCookie, setCookie } from '../../utils/cookie'
+import { removeCookie, removeToken, setCookie, setToken } from '../../utils/cookie'
 import { toast } from 'react-toastify'
 
 const authenticate = ({email, password}, type) => {
@@ -14,7 +14,7 @@ const authenticate = ({email, password}, type) => {
         .then( ( response ) => {
             const { token, user } = response.data
             setCookie('user', user)
-            setCookie('token', token)
+            setToken(token)
 
             dispatch({type: AUTHENTICATE, payload: token})
             dispatch({type: USER, payload: user }  )
@@ -33,7 +33,7 @@ const authenticate = ({email, password}, type) => {
 const reauthenticate = (token, user) => {
     return (dispatch) => {
       setCookie('user', user)
-      setCookie('token', token)
+      setToken(token)
       dispatch({type: AUTHENTICATE, payload: token});
       dispatch({type: USER, payload: user});
     };
@@ -42,7 +42,7 @@ const reauthenticate = (token, user) => {
 const deauthenticate = () => {
     return (dispatch) => {
         removeCookie('user')
-        removeCookie('token')
+        removeToken()
         Router.push('/signin');
         dispatch({type: DEAUTHENTICATE});
     };

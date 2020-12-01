@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { NextPage } from 'next'
 import Link from 'next/link';
 
 
 import  {PageHome} from '../styles/pages/Home';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import actions from '../redux/actions';
 import { getCookie } from '../utils/cookie';
 
-const Landing: React.FC = () => {
+const Landing: NextPage = () => {
   const dispatch = useDispatch()
 
   const user = getCookie('user') ? JSON.parse(getCookie('user')) : undefined
